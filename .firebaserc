@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "angular-ass-1": {
+      "hosting": {
+        "TopNav-Assignment": [
+          "angular-ass-1"
+        ]
+      }
+    },
+    "assignment-1-5acce": {
+      "hosting": {
+        "TopNav-Assignment": [
+          "assignment-1-5acce"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "assignment-1-5acce"
+  }
+}

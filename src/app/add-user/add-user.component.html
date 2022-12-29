@@ -1,0 +1,92 @@
+<div class="add-user-container">
+    
+    <div class="form-container">
+        <div class="head-container">
+            <span class="header">Add New User</span>
+        </div>
+        <div class="form-field-container">
+            <form [formGroup]="addUserForm" (ngSubmit)="handleSubmision()" >
+
+
+                <div class="container">
+                      <!--Name-->
+                      <div class="example-full-width">
+                        <mat-form-field >
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput formControlName ="name" [errorStateMatcher]="matcher"
+                                placeholder="Ex. Yuvan Steny">
+                            <mat-error *ngIf="this.addUserForm.controls['name'].hasError('name') && 
+                            !this.addUserForm.controls['name'].hasError('required')">
+                            Please enter a valid Name 
+                            </mat-error>
+                            <mat-error *ngIf="this.addUserForm.controls['name'].hasError('required')">
+                            Name is required
+                            </mat-error>
+                        </mat-form-field>
+                      </div>
+                       
+                        <!--Email-->
+                        <div class="example-full-width">
+                            <mat-form-field >
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput formControlName ="email" [errorStateMatcher]="matcher"
+                                    placeholder="Ex. pat@example.com">
+                                <mat-error *ngIf="this.addUserForm.controls['email'].hasError('email') && 
+                                !this.addUserForm.controls['email'].hasError('required')">
+                                Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="this.addUserForm.controls['email'].hasError('required')">
+                                Email is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                       
+                        <!--Age-->
+                        <div class="example-full-width">
+                            <mat-form-field >
+                                <mat-label>Age</mat-label>
+                                <input type="number" matInput formControlName ="age" [errorStateMatcher]="matcher"
+                                    placeholder="Ex. 21">
+                                <mat-error *ngIf="this.addUserForm.controls['age'].hasError('age') && 
+                                !this.addUserForm.controls['age'].hasError('required')">
+                                Please enter a valid Age 
+                                </mat-error>
+                                <mat-error *ngIf="this.addUserForm.controls['age'].hasError('required')">
+                                Age is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        
+                        <!--Score-->
+                        <div class="example-full-width">
+                            <mat-form-field >
+                                <mat-label>Score</mat-label>
+                                <input type="number" matInput formControlName ="score" [errorStateMatcher]="matcher"
+                                    placeholder="Ex. 21">
+                                <mat-error *ngIf="this.addUserForm.controls['score'].hasError('score') && 
+                                !this.addUserForm.controls['score'].hasError('required')">
+                                Please enter a valid Score 
+                                </mat-error>
+                                <mat-error *ngIf="this.addUserForm.controls['score'].hasError('required')">
+                                Score is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-raised-button color="primary">
+                                Submit
+                            </button>
+                        </div>
+                </div>
+              
+            
+               
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+
+

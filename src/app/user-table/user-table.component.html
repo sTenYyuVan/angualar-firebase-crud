@@ -1,0 +1,44 @@
+<h1> Users Table</h1>
+<table mat-table [dataSource]="userDataArray" class="mat-elevation-z8 demo-table">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+  
+    <!-- age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>Age</th>
+      <td mat-cell *matCellDef="let element">{{element.age}}</td>
+    </ng-container>
+  
+    <!-- score Column -->
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef>Score</th>
+      <td mat-cell *matCellDef="let element">{{element.score}}</td>
+    </ng-container>
+    
+    <!-- Button Column -->
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef>Add a Winner</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="!element.winner_flag">
+          <button color="primary" mat-raised-button
+         (click)="addWinner('0ms', '0ms', element)">Add A Winner</button>
+        </div>
+        <div *ngIf="element.winner_flag">
+          <button color="basic" mat-raised-button
+          (click)="removeWinner('0ms', '0ms',element)">Remove Winner</button>
+        </div>
+        </td>
+    </ng-container>
+      <!-- Delete Btn Column -->
+      <ng-container matColumnDef="deletebtn">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let element">
+           <button color="warn" mat-raised-button
+          (click)="handleDelete(element)">Delete</button></td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

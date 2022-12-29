@@ -1,0 +1,21 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }
+  
+  .mdc-data-table__table{
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mat-mdc-table{
+    table-layout:100%;
+}
